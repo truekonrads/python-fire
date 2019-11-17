@@ -20,6 +20,11 @@ from __future__ import print_function
 
 import termcolor
 
+# On Windows, terminals cannot display ANSI colors, this can be disabled 
+# with this environment variable
+import os
+if os.name=='nt':
+  os.environ['ANSI_COLORS_DISABLED']="1"
 
 def Indent(text, spaces=2):
   lines = text.split('\n')
